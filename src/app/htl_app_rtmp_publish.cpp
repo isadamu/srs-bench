@@ -223,6 +223,7 @@ int StRtmpPublishClient::PublishAV(srs_flv_t flv,
             re = timestamp;
         }
         
+        int64_t now = StUtility::GetCurrentTime()
         if (timestamp > re && timestamp - re > 300) {
             st_usleep((timestamp - re) * 1000);
             int64_t sleepTs = StUtility::GetCurrentTime();
