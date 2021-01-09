@@ -89,7 +89,7 @@ int StRtmpPublishClient::Publish(string input, RtmpUrl* url){
         // restart when flv EOF
         if (srs_flv_is_eof(ret)) {
             srs_flv_lseek(flv, 0);
-            timebase += endtime - starttime + 1;
+            timebase += endtime - starttime;
             Info("republish for flv EOF, timebase=%"PRId64", start=%d, end=%d, ret=%d", 
                 timebase, starttime, endtime, ret);
             continue;
